@@ -189,19 +189,20 @@ function esPrimo(numero) {
     // Pista: un número primo solo es divisible por sí mismo y por 1
     // Pista 2: Puedes resolverlo usando un bucle `for`
     // Nota: Los números 0 y 1 NO son considerados números primos
-    let result = false;
+    let result = true;
 
     console.log(result);
     if (numero == 0 || numero == 1) {
+        result = false;
         return result;
     }
-    for (var i = 2; i <= numero; i++) {
-        if (i !== numero) {
-            if (numero % i == 0) {
-                result = true;
-                return result;
-            }
+    for (var i = 2; i <= numero / 2; i++) {
+
+        if (numero % i == 0) {
+            result = false;
+            return result;
         }
+
 
     }
     return result;
